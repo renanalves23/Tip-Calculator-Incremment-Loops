@@ -50,6 +50,27 @@ var mike = {
   }
 }
 
+function calcAverage(tips) {
+  var soma = 0;
+  for (var i = 0; i < tips.length; i++) {
+    soma = soma + tips[i];
+  }
+  return soma / tips.length; //atribuindo a respectiva média à calcAverage()
+}
+
+      //Cálculos
 john.calcTips();
 mike.calcTips();
+
+john.average = calcAverage(john.tips);
+mike.average = calcAverage(mike.tips);
+
 console.log(john, mike);
+
+if (john.average > mike.average) {
+  console.log(' A maior média de gorjetas é de ' + john.fullname + ' totalizando ' + john.average);
+}else if (mike.average > john.average) {
+  console.log(' A maior média de gorjetas é de ' + mike.fullname + ' totalizando ' + mike.average);
+}else {
+  console.log('Ambos tem a mesma média, a qual é ' + john.average);
+}
